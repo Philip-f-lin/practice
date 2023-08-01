@@ -1,6 +1,6 @@
 package myreflect.myreflect1;
 
-public class MyReflectDemo1 {
+public class MyReflectDemo {
     public static void main(String[] args) throws ClassNotFoundException {
         Class clazz1 = Class.forName("myreflect.myreflect1.Student");
 
