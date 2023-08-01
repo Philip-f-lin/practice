@@ -1,23 +1,18 @@
-package myreflect.myreflect2;
+package myreflect.myreflect3;
 
 public class Student {
     private String name;
     private int age;
 
+    public String gender;
+
     public Student() {
     }
 
-    public Student(String name) {
-        this.name = name;
-    }
-
-    protected Student(int age) {
-        this.age = age;
-    }
-
-    private Student(String name, int age) {
+    public Student(String name, int age, String gender) {
         this.name = name;
         this.age = age;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -36,11 +31,20 @@ public class Student {
         this.age = age;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", gender='" + gender + '\'' +
                 '}';
     }
 }
