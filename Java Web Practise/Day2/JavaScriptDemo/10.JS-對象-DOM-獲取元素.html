@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-對象-DOM</title>
+</head>
+<body>
+    <img id = "h1" src = "../img/off.gif"> <br><br>
+    <div class="cls">傳智教育</div>
+    <div class="cls">黑馬程序員</div>
+    
+    <input type = "checkbox" name="hobby">電影
+    <input type = "checkbox" name="hobby">旅遊
+    <input type = "checkbox" name="hobby">遊戲
+
+    <script>
+        //var img = document.getElementById('h1');
+        //alert(img);
+
+        //var divs = document.getElementsByTagName("div");
+        //for(let i = 0; i< divs.length;i++){
+        //    alert(divs[i]);
+        //}
+
+        //var ins = document.getElementsByName("hobby");
+        //for(let i = 0; i< ins.length;i++){
+        //    alert(ins[i]);
+        //}
+
+        //var divs = document.getElementsByClassName("cls");
+        //for(let i = 0; i< divs.length;i++){
+        //    alert(divs);
+        //}
+
+        var divs = document.getElementsByClassName("cls");
+        var div1 = divs[0];
+        div1.innerHTML = "傳智教育666";
+
+    </script>
+</body>
+</html>

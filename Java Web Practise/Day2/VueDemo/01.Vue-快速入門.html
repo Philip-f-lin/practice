@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-快速入門</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+   <!-- v-model會進行數據綁定的指令，會將數據模型的指令在頁面展示出來，
+數據模型的變化會影響頁面，簡單來說data裡面的message跟v-model裡面的message會相互影響 -->
+    <div id ="app">
+        <input type="text" v-model="message">
+        
+        {{message}}
+    </div>
+
+</body>
+<script>
+    //定義Vue對象
+    new Vue({
+        el:"#app", //Vue接管區域
+        data:{//data用來定義數據模型
+            message:"Hello Vue" 
+        }
+    })
+</script>
+</html>

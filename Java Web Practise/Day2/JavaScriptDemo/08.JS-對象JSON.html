@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-對象-JSON</title>
+</head>
+<body>
+    <script>
+        //var user = {
+        //    name:"Tom",
+        //    age:10,
+        //    gender:"male",
+            //eat:function(){
+            //    alert("用膳～");
+            //}
+
+        //    eat(){
+        //        alert("用膳～");
+        //    }
+        //}
+    
+        //alert(user.name);
+        //user.eat();
+
+
+
+        var jsonstr = '{"name":"Tom", "age":18, "addr":["台北", "高雄", "宜蘭"]}';
+        
+        var obj = JSON.parse(jsonstr);
+        alert(obj.name);
+
+        alert(JSON.stringify(obj));
+        
+
+    </script>
+    
+    
+</body>
+</html>
