@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [14/Aug/2023:13:55:51 +0800] "GET /tomcat-demo2 HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [14/Aug/2023:13:55:51 +0800] "GET /tomcat-demo2/ HTTP/1.1" 404 977 http-bio-8080-exec-3 8
+0:0:0:0:0:0:0:1 - - [14/Aug/2023:13:56:01 +0800] "GET /tomcat-demo2/a.html HTTP/1.1" 200 133 http-bio-8080-exec-5 38
+0:0:0:0:0:0:0:1 - - [14/Aug/2023:13:57:12 +0800] "GET /tomcat_demo2_war/ HTTP/1.1" 404 - http-bio-8080-exec-8 0
+0:0:0:0:0:0:0:1 - - [14/Aug/2023:13:57:22 +0800] "GET /tomcat_demo2_war/a.html HTTP/1.1" 404 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [14/Aug/2023:13:58:01 +0800] "GET / HTTP/1.1" 404 951 http-bio-8080-exec-1 18
+0:0:0:0:0:0:0:1 - - [14/Aug/2023:13:58:16 +0800] "GET /a.html HTTP/1.1" 200 133 http-bio-8080-exec-4 4
+0:0:0:0:0:0:0:1 - - [14/Aug/2023:13:59:05 +0800] "GET / HTTP/1.1" 404 951 http-bio-8080-exec-1 16
