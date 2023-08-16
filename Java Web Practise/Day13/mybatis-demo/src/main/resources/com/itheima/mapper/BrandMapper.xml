@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.itheima.mapper.BrandMapper">
+
+    <!--
+        數據庫表的字段名稱 和 實體類的屬性名稱 不一樣 則不能自動封裝數據
+        * resultMap:
+            1. 定義<resultMap>標籤
+            2. 在<select>標籤中，使用resultMap屬性替換resultType屬性
+    -->
+
+    <!--
+        id:唯一標示
+        type:映射的類型，支持別名
+    -->
+    <resultMap id="brandResultMap" type="Brand">
+        <!--
+            id:完成主鍵字段的映射
+                column:表的列名
+                property:實體類的屬性名
+            result:完成一般字段的映射
+                column:表的列名
+                property:實體類的屬性名
+        -->
+        <result column="brand_name" property="brandName"/>
+        <result column="company_name" property="companyName"/>
+    </resultMap>
+
+
+    <select id="selectAll" resultMap="brandResultMap">
+        select * from tb_brand;
+    </select>
+
+    <!--<select id="selectAll" resultType="Brand">
+        select * from tb_brand;
+    </select>-->
+</mapper>
