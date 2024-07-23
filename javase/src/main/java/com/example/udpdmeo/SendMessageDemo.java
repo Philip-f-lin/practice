@@ -16,13 +16,9 @@ public class SendMessageDemo {
 
         // 2.打包數據
         String str = "你好呀";
-
         byte[] bytes = str.getBytes();
-
         InetAddress address = InetAddress.getByName("127.0.0.1");
-
         int port = 10086;
-
         DatagramPacket dp = new DatagramPacket(bytes, bytes.length, address, port);
 
         // 3.發送數據
