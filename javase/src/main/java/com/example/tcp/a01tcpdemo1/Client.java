@@ -16,7 +16,7 @@ public class Client {
         // 2.可以從連接通道中獲取數據
         OutputStream os = socket.getOutputStream();
         // 寫出數據
-        os.write("aaa".getBytes());
+        os.write("你好你好".getBytes());
 
         // 3.釋放資源
         os.close();

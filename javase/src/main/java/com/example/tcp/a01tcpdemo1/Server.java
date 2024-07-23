@@ -1,8 +1,6 @@
 package com.example.tcp.a01tcpdemo1;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -17,10 +15,15 @@ public class Server {
         Socket socket = ss.accept();
 
         // 3.從連接通道中獲取輸入流讀取數據
-        InputStream is = socket.getInputStream();
+        /*InputStream is = socket.getInputStream();
+        InputStreamReader isr = new InputStreamReader(is);
+        BufferedReader br = new BufferedReader(isr);*/
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
         int b;
-        while((b = is.read()) != -1){
-            System.out.println((char)b);
+        while((b = br.read()) != -1){
+            System.out.print((char)b);
         }
 
         // 4.釋放資源
