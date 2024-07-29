@@ -22,12 +22,12 @@ public class A02_MapDemo2 {
         Set<String> keys = map.keySet();
 
         //3.2遍歷單列集合，得到每一個鍵
-        /*for (String key : keys) {
+        for (String key : keys) {
             //System.out.println(key);
             //3.3 利用 map 集合中的鍵獲取對應的值 get
             String value = map.get(key);
             System.out.println(key + " = " + value);
-        }*/
+        }
 
         keys.forEach(s -> {
                 String value = map.get(s);

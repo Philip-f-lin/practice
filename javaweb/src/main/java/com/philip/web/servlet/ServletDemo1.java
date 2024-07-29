@@ -1,4 +1,4 @@
-package com.philip.web;
+package com.philip.web.servlet;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;

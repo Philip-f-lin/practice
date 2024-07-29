@@ -9,7 +9,7 @@
     <!-- Servlets and Servlet Mappings -->
     <servlet>
         <servlet-name>MyServlet</servlet-name>
-        <servlet-class>com.philip.web.ServletDemo1</servlet-class>
+        <servlet-class>com.philip.web.servlet.ServletDemo1</servlet-class>
     </servlet>
 
     <servlet-mapping>
