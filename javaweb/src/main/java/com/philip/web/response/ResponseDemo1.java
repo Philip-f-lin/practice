@@ -20,8 +20,11 @@ public class ResponseDemo1 extends HttpServlet {
         resp.setHeader("Location", "/javaweb/resp2");*/
 
         // 簡化方式完成重定向
-        //resp.sendRedirect("/javaweb/resp2");
-        resp.sendRedirect("https://www.google.com");
+        // 動態獲取虛擬目錄
+        String contextPath = req.getContextPath();
+
+        resp.sendRedirect(contextPath + "/resp2");
+        //resp.sendRedirect("https://www.google.com");
     }
 
     @Override
