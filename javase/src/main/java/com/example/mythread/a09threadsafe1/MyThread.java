@@ -5,14 +5,11 @@ public class MyThread extends Thread{
     //表示這個類別所有的對象，都共享ticket數據
     static int ticket = 0; // 0 ~ 99
 
-    // 鎖物件，一定要是唯一的
-    static Object object = new Object();
-
     @Override
     public void run() {
         while (true){
             // 同步代碼塊
-            synchronized (object){
+            synchronized (MyThread.class){
                 if (ticket < 1000){
                     try {
                         Thread.sleep(10);
