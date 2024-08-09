@@ -27,7 +27,21 @@ public class FutureAPIDemo {
         System.out.println(Thread.currentThread().getName() + "\t ---忙其他任務");
 
         //System.out.println(futureTask.get()); // get容易導致堵塞
-        System.out.println(futureTask.get(3, TimeUnit.SECONDS)); // 假如不願意等待，希望過時不候，可以自動離開
+        //System.out.println(futureTask.get(3, TimeUnit.SECONDS)); // 假如不願意等待，希望過時不候，可以自動離開
+
+        while(true){
+            if(futureTask.isDone()){
+                System.out.println(futureTask.get());
+                break;
+            }else {
+                try {
+                    TimeUnit.MILLISECONDS.sleep(500);
+                    System.out.println("處理中，請稍候");
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 
 
