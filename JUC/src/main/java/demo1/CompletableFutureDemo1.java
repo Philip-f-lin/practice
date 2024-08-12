@@ -7,6 +7,7 @@ import lombok.Getter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -37,6 +38,7 @@ public class CompletableFutureDemo1 {
 
     /**
      * step by step 一家一家查
+     * List<NetMall> ----> map ---> List<String>
      * @param list
      * @param productName
      * @return
@@ -53,16 +55,40 @@ public class CompletableFutureDemo1 {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * List<NetMall> ----> List<CompletableFuture<String>> ---> List<String>
+     * @param list
+     * @param productName
+     * @return
+     */
+    public static List<String> getPriceByCompletableFuture(List<NetMall> list, String productName){
+        return list.stream().map(netMall ->
+                CompletableFuture.supplyAsync(() -> String.format(productName + " in %s price is %.2f",
+                netMall.getMallName(),
+                netMall.calcPrice(productName))))
+                .collect(Collectors.toList())
+                .stream()
+                .map(s -> s.join())
+                .collect(Collectors.toList());
+    }
+
     public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
+        long startTime1 = System.currentTimeMillis();
         List<String> list1 = getPrice(list, "mysql");
         for (String s : list1) {
             System.out.println(s);
         }
-        long endTime = System.currentTimeMillis();
-        System.out.println("---costTime: " + (endTime - startTime) + "毫秒");
-    }
+        long endTime1 = System.currentTimeMillis();
+        System.out.println("---costTime: " + (endTime1 - startTime1) + "毫秒");
 
+        long startTime2 = System.currentTimeMillis();
+        List<String> list2 = getPriceByCompletableFuture(list, "mysql");
+        for (String s : list2) {
+            System.out.println(s);
+        }
+        long endTime2 = System.currentTimeMillis();
+        System.out.println("---costTime: " + (endTime2 - startTime2) + "毫秒");
+    }
 }
 
 class NetMall{
