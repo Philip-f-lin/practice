@@ -25,6 +25,7 @@ public class CompletableFutureFastDemo {
             return "playB";
         });
 
+        // 誰快用誰
         CompletableFuture<String> result = playA.applyToEither(playB, f -> {
             return "winner is: " + f;
         });
