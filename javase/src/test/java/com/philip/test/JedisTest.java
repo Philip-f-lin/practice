@@ -1,5 +1,6 @@
 package com.philip.test;
 
+import com.example.jedis.util.JedisConnectionFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,8 @@ public class JedisTest {
     @BeforeEach
     void setUp() {
         // 1. 建立連接
-        jedis = new Jedis("127.0.0.1", 6379);
+        //jedis = new Jedis("127.0.0.1", 6379);
+        jedis = JedisConnectionFactory.getJedis();
 
         // 2. 選擇庫
         jedis.select(0);
