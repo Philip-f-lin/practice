@@ -35,11 +35,11 @@ public class JedisTest {
     @Test
     void testHash() {
         // 插入 hash 數據
-        jedis.hset("user:1", "name", "Jack");
-        jedis.hset("user:1", "age", "21");
+        jedis.hset("pojo:1", "name", "Jack");
+        jedis.hset("pojo:1", "age", "21");
 
         // 獲取
-        Map<String, String> map = jedis.hgetAll("user:1");
+        Map<String, String> map = jedis.hgetAll("pojo:1");
         System.out.println(map);
     }
 
