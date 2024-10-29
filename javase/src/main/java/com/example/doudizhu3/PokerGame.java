@@ -103,6 +103,12 @@ public class PokerGame {
      * @param list 集合
      */
     public void order(ArrayList<String> list){
+        // 定義花色的順序，梅花 (♣) 優先
+        Map<String, Integer> colorOrder = new HashMap<>();
+        colorOrder.put("♣", 1);
+        colorOrder.put("♦", 2);
+        colorOrder.put("♥", 3);
+        colorOrder.put("♠", 4);
         Collections.sort(list, new Comparator<String>() {
             // Arrays.sort (插入排序 + 二分查找)
             @Override
@@ -124,7 +130,7 @@ public class PokerGame {
 
                 // 3.比較 o1 和 o2 的價值  ♥3 ♠3
                 int i = value1 - value2;
-                return i == 0 ? color1.compareTo(color2) : i;
+                return i == 0 ? colorOrder.get(color1) - colorOrder.get(color2) : i;
             }
         });
     }
